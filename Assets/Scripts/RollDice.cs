@@ -52,8 +52,16 @@ public class RollDice : MonoBehaviour
 
     public IEnumerator DiceResult()
     {
-        yield return new WaitForSeconds(3);
-        Debug.Log("Result");
+        // 等骰子結束
+        yield return new WaitForSeconds(2);
+
+        // 顯示 UI
+        ResultText.gameObject.SetActive(true);
+        ResultText.text = "結果：";
+        for(int i = 0; i < int.Parse(TextNumber.text); i++)
+        {
+            
+        }
         yield return null;
     }
 }
